@@ -1,1 +1,4 @@
+#bin제외
 bin/
+#obj/Debug제외
+obj/Debug/
