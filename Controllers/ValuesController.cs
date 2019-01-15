@@ -18,11 +18,8 @@ namespace Web.Controllers
             Class1 c1 = new Class1();
             Console.WriteLine(c1.GetInt());
             
-            var ip = HttpContext.Connection.RemoteIpAddress;
-            string serverIp = ip.ToString();
-            serverIp = serverIp.Substring(serverIp.LastIndexOf(":")+1);
-            Database db = new Database(serverIp);
-            Console.WriteLine(serverIp);
+            Database db = new Database();
+            
             MySqlConnection conn = db.GetConnection();
             if(conn == null){
                 Console.WriteLine("접속 오류..");
